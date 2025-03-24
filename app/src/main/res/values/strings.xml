@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EatGreen</string>
+    <string name="home_button">Home</string>
+    <string name="about_button">About</string>
+    <string name="menu_button">Menu</string>
+    <string name="calorie_button">Counter</string>
+    <string name="home_screen">EatGreen</string>
+    <string name="sales_button">Sales</string>
+    <string name="contact_button">Contact</string>
+</resources>
