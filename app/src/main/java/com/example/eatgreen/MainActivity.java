@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
-        setSupportActionBar(myToolBar);
+        setSupportActionBar(myToolBar); // This makes the toolbar your action bar
     }
 
     @Override
@@ -31,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         TextView displayTextView = findViewById(R.id.DisplayText);
 
-        // Use if-else or switch statement with valid constants
+        // Handle menu item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
             displayTextView.setText("Home!");
             return true;
         } else if (itemId == R.id.about_page) {
-            // Start the AboutActivity when About option is selected
+            // Navigate to AboutActivity
             Intent aboutIntent = new Intent(MainActivity.this, activity_display_about.class);
             startActivity(aboutIntent);
             return true;

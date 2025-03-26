@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Custom Toolbar Style -->
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPrimary</item> <!-- Set your custom color -->
+        <item name="android:titleTextColor">@android:color/white</item> <!-- Toolbar title color -->
+    </style>
+
+    <!-- App Theme -->
+    <style name="Theme.EatGreen" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Remove action bar from theme -->
+        <item name="windowActionBar">false</item>  <!-- Disable the default action bar -->
+        <item name="windowNoTitle">true</item>    <!-- Remove the title bar -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionBarStyle">@style/ToolbarStyle</item>  <!-- Custom toolbar style -->
+    </style>
+
+</resources>
+
+
+
