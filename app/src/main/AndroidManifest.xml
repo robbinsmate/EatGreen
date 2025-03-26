@@ -12,18 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EatGreen"
         tools:targetApi="31">
+
+        <!-- About Activity declaration -->
         <activity
-            android:name=".activity_display_home"
-            android:exported="false" />
+            android:name=".activity_display_about"
+            android:theme="@style/Theme.EatGreen"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- Main Activity declaration -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

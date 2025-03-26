@@ -6,75 +6,55 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolBar = findViewById(R.id.toolbar);
+        // Set up the Toolbar
+        Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_items, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        TextView displayTextView = (TextView) findViewById(R.id.DisplayText);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        TextView displayTextView = findViewById(R.id.DisplayText);
 
-        if (item.getItemId() == R.id.home_page)
-        {
-            Intent favIntent = new Intent(this, activity_display_home.class);
-            startActivity(favIntent);
+        // Use if-else or switch statement with valid constants
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.home_page) {
+            displayTextView.setText("Home!");
             return true;
-        }
-        else if(item.getItemId() == R.id.about_page)
-        {
-            displayTextView.setText("About View!");
+        } else if (itemId == R.id.about_page) {
+            // Start the AboutActivity when About option is selected
+            Intent aboutIntent = new Intent(MainActivity.this, activity_display_about.class);
+            startActivity(aboutIntent);
             return true;
-        }
-        else if(item.getItemId() == R.id.menu_page)
-        {
+        } else if (itemId == R.id.menu_page) {
             displayTextView.setText("Menu!");
             return true;
-        }
-        else if(item.getItemId() == R.id.calorie_page)
-        {
+        } else if (itemId == R.id.calorie_page) {
             displayTextView.setText("Calorie View!");
             return true;
-        }
-        else if(item.getItemId() == R.id.sales_page)
-        {
+        } else if (itemId == R.id.sales_page) {
             displayTextView.setText("Sales!");
             return true;
-        }
-        else if(item.getItemId() == R.id.contact_page)
-        {
+        } else if (itemId == R.id.contact_page) {
             displayTextView.setText("Contact!");
             return true;
-        }
-        else{
+        } else {
             return super.onOptionsItemSelected(item);
         }
     }
