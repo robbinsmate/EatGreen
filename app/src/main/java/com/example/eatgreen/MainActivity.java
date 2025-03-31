@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -35,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
-            displayTextView.setText("Home!");
+            Intent aboutIntent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.about_page) {
             // Navigate to AboutActivity
@@ -43,13 +43,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.menu_page) {
-            displayTextView.setText("Menu!");
+            Intent aboutIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.calorie_page) {
-            displayTextView.setText("Calorie View!");
+            Intent aboutIntent = new Intent(MainActivity.this, activity_display_counter.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.sales_page) {
-            displayTextView.setText("Sales!");
+            Intent aboutIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
             // Navigate to AboutActivity

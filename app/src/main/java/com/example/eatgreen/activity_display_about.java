@@ -17,19 +17,13 @@ public class activity_display_about extends AppCompatActivity {
         setContentView(R.layout.activity_display_about);
 
         // Set up the Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar); // This makes the toolbar your action bar
-
-        // Enable the back button (up button)
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true); // Shows the back button
-        }
+        Toolbar myToolBar = findViewById(R.id.toolbar2);
+        setSupportActionBar(myToolBar); // This makes the toolbar your action bar
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_items, menu); // Inflate the menu for the toolbar
+        getMenuInflater().inflate(R.menu.menu_items, menu);
         return true;
     }
 
@@ -41,7 +35,8 @@ public class activity_display_about extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
-            displayTextView.setText("Home!");
+            Intent aboutIntent = new Intent(activity_display_about.this, MainActivity.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.about_page) {
             // Navigate to AboutActivity
@@ -49,13 +44,16 @@ public class activity_display_about extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.menu_page) {
-            displayTextView.setText("Menu!");
+            Intent aboutIntent = new Intent(activity_display_about.this, activity_display_menu.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.calorie_page) {
-            displayTextView.setText("Calorie View!");
+            Intent aboutIntent = new Intent(activity_display_about.this, activity_display_counter.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.sales_page) {
-            displayTextView.setText("Sales!");
+            Intent aboutIntent = new Intent(activity_display_about.this, activity_display_menu.class);
+            startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
             // Navigate to AboutActivity

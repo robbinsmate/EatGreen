@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class activity_display_contact extends AppCompatActivity {
+public class activity_display_counter extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,29 +34,29 @@ public class activity_display_contact extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
-            Intent aboutIntent = new Intent(activity_display_contact.this, MainActivity.class);
+            Intent aboutIntent = new Intent(activity_display_counter.this, MainActivity.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.about_page) {
             // Navigate to AboutActivity
-            Intent aboutIntent = new Intent(activity_display_contact.this, activity_display_about.class);
+            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_about.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.menu_page) {
-            Intent aboutIntent = new Intent(activity_display_contact.this, activity_display_menu.class);
+            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_menu.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.calorie_page) {
-            Intent aboutIntent = new Intent(activity_display_contact.this, activity_display_counter.class);
+            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_counter.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.sales_page) {
-            Intent aboutIntent = new Intent(activity_display_contact.this, activity_display_menu.class);
+            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_menu.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
             // Navigate to AboutActivity
-            Intent contactIntent = new Intent(activity_display_contact.this, activity_display_contact.class);
+            Intent contactIntent = new Intent(activity_display_counter.this, activity_display_contact.class);
             startActivity(contactIntent);
             return true;
         } else {
@@ -65,5 +64,3 @@ public class activity_display_contact extends AppCompatActivity {
         }
     }
 }
-
-
