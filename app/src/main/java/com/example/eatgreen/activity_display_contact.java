@@ -5,25 +5,31 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+public class activity_display_contact extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_display_contact);
 
         // Set up the Toolbar
-        Toolbar myToolBar = findViewById(R.id.toolbar2);
-        setSupportActionBar(myToolBar); // This makes the toolbar your action bar
+        Toolbar toolbar = findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar); // This makes the toolbar your action bar
+
+        // Enable the back button (up button)
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true); // Shows the back button
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_items, menu);
+        getMenuInflater().inflate(R.menu.menu_items, menu); // Inflate the menu for the toolbar
         return true;
     }
 
@@ -39,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (itemId == R.id.about_page) {
             // Navigate to AboutActivity
-            Intent aboutIntent = new Intent(MainActivity.this, activity_display_about.class);
+            Intent aboutIntent = new Intent(activity_display_contact.this, activity_display_about.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.menu_page) {
@@ -53,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (itemId == R.id.contact_page) {
             // Navigate to AboutActivity
-            Intent contactIntent = new Intent(MainActivity.this, activity_display_contact.class);
+            Intent contactIntent = new Intent(activity_display_contact.this, activity_display_contact.class);
             startActivity(contactIntent);
             return true;
         } else {
@@ -61,3 +67,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_display_about">
+    tools:context=".activity_display_contact">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
@@ -17,7 +17,7 @@
 
     <!-- Title Text -->
     <TextView
-        android:id="@+id/about_text"
+        android:id="@+id/contact_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -26,11 +26,11 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="214dp"
-        android:text="@string/about_button"
+        android:layout_marginTop="209dp"
+        android:text="@string/contact_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />

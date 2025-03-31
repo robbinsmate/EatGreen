@@ -29,6 +29,16 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <!-- Contact Activity -->
+        <activity
+            android:name=".activity_display_contact"
+            android:theme="@style/Theme.EatGreen"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
