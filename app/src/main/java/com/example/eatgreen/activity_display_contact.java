@@ -1,15 +1,19 @@
 package com.example.eatgreen;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import androidx.appcompat.app.ActionBar;
+import android.content.Intent;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class activity_display_contact extends AppCompatActivity {
+
+    private EditText emailEditText, messageEditText;
+    private Button sendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,14 @@ public class activity_display_contact extends AppCompatActivity {
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar); // This makes the toolbar your action bar
+
+        // Initialize the views
+        emailEditText = findViewById(R.id.email_edit_text);
+        messageEditText = findViewById(R.id.message_edit_text);
+        sendButton = findViewById(R.id.send_button);
+
+        // Set the send button's onClick listener
+        sendButton.setOnClickListener(v -> sendMessage());
     }
 
     @Override
@@ -29,7 +41,6 @@ public class activity_display_contact extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        TextView displayTextView = findViewById(R.id.DisplayText);
 
         // Handle menu item selection
         int itemId = item.getItemId();
@@ -64,6 +75,22 @@ public class activity_display_contact extends AppCompatActivity {
             return super.onOptionsItemSelected(item);
         }
     }
+
+    // Method to handle sending the message
+    private void sendMessage() {
+        String email = emailEditText.getText().toString();
+        String message = messageEditText.getText().toString();
+
+        if (email.isEmpty() || message.isEmpty()) {
+            // Show a toast if the email or message is empty
+            Toast.makeText(this, "Please fill in both fields", Toast.LENGTH_SHORT).show();
+        } else {
+            // Show a toast to confirm the message is sent
+            Toast.makeText(this, "Message sent successfully!", Toast.LENGTH_SHORT).show();
+
+            // Clear the email and message fields after submission
+            emailEditText.setText("");
+            messageEditText.setText("");
+        }
+    }
 }
-
-

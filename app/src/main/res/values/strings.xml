@@ -8,4 +8,12 @@
     <string name="sales_button">Sales</string>
     <string name="contact_button">Contact</string>
     <string name="eatGreen_button">EatGreen</string>
+    <string name="twitter_social">EatGreen@twitter.com</string>
+    <string name="facebook_Social">EatGreen@facebook.com</string>
+    <string name="instagram_social">EatGreen@instagram.com</string>
+    <string name="tiktok_social">EatGreen@tiktok.com</string>
+    <string name="about_us_content">
+        EatGreen is a local health food restaurant dedicated to promoting healthy eating and sustainable living. We believe that nutritious food should be both accessible and enjoyable. \n\nOur menu is carefully crafted to offer fresh, high-quality ingredients while ensuring that our meals are balanced and nutritious. We also provide dietary information, including calorie counts, to help our customers make informed food choices.
+    </string>
+    <string name="kitchen_image" />
 </resources>
