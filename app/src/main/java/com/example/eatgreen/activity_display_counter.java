@@ -13,7 +13,7 @@ public class activity_display_counter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_contact);
+        setContentView(R.layout.activity_display_counter);
 
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
