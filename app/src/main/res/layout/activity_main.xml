@@ -20,19 +20,22 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Smaller Header Image -->
+
+    <!-- Welcome Message -->
+
     <ImageView
         android:id="@+id/about_image"
         android:layout_width="0dp"
         android:layout_height="150dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/kitchen_image"
         android:scaleType="centerCrop"
         android:src="@drawable/kitchen"
-        app:layout_constraintTop_toBottomOf="@id/toolbar2"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar2" />
 
-    <!-- Welcome Message -->
     <TextView
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
