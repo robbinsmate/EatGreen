@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,8 +28,6 @@ public class activity_display_menu extends AppCompatActivity {
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
-        // Set a custom title on the toolbar
-        getSupportActionBar().setTitle("Menu");
 
         // Populate the dishListArray with sample data
         populateDishList();
@@ -83,22 +82,20 @@ public class activity_display_menu extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
     private void populateDishList() {
-        dishListArray.add(new DishList("Spiced Lentil Soup", "Lentils, Spices, Vegetable Broth", "£5.99", "V, Ve, D", "200"));
-        dishListArray.add(new DishList("Crispy Sweet Potato Fries", "Sweet Potatoes, Olive Oil, Spices", "£4.99", "V, Ve, G", "220"));
-        dishListArray.add(new DishList("Stuffed Mushrooms", "Mushrooms, Quinoa, Garlic, Herbs", "£6.49", "Ve, D, G", "240"));
+        // Sample dishes (Added description and image placeholder)
+        dishListArray.add(new DishList("Spiced Lentil Soup", "Lentils, Spices, Vegetable Broth", "£5.99", "V, Ve, D", "200", "A warm, spiced dish perfect for winter days.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Crispy Sweet Potato Fries", "Sweet Potatoes, Olive Oil, Spices", "£4.99", "V, Ve, G", "220", "Crispy fries, perfectly seasoned.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Stuffed Mushrooms", "Mushrooms, Quinoa, Garlic, Herbs", "£6.49", "Ve, D, G", "240", "Stuffed mushrooms with quinoa and herbs.", R.drawable.kitchen));
 
-        dishListArray.add(new DishList("Salmon with Asparagus", "Fresh Salmon, Asparagus, Lemon", "£14.99", "D, G", "500"));
-        dishListArray.add(new DishList("Grilled Vegetable Skewers", "Zucchini, Bell Peppers, Mushrooms, Olive Oil", "£11.99", "V, Ve, G", "350"));
-        dishListArray.add(new DishList("Quinoa-Stuffed Bell Peppers", "Quinoa, Vegetables, Spices", "£12.99", "V, Ve, D, G", "400"));
+        dishListArray.add(new DishList("Salmon with Asparagus", "Fresh Salmon, Asparagus, Lemon", "£14.99", "D, G", "500", "Grilled salmon served with fresh asparagus.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Grilled Vegetable Skewers", "Zucchini, Bell Peppers, Mushrooms, Olive Oil", "£11.99", "V, Ve, G", "350", "Grilled vegetables skewered for flavor.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Quinoa-Stuffed Bell Peppers", "Quinoa, Vegetables, Spices", "£12.99", "V, Ve, D, G", "400", "Bell peppers stuffed with quinoa and spices.", R.drawable.kitchen));
 
-        dishListArray.add(new DishList("Vegan Chocolate Cake", "Cocoa, Almond Flour, Agave Syrup", "£4.99", "V, D", "220"));
-        dishListArray.add(new DishList("Coconut Mango Panna Cotta", "Coconut Milk, Mango Puree, Agar Agar", "£5.99", "V, D, G", "200"));
-        dishListArray.add(new DishList("Lemon Sorbet", "Lemon, Sugar, Water", "£3.99", "V, D, G", "150"));
+        dishListArray.add(new DishList("Vegan Chocolate Cake", "Cocoa, Almond Flour, Agave Syrup", "£4.99", "V, D", "220", "Rich and decadent vegan chocolate cake.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Coconut Mango Pannacotta", "Coconut Milk, Mango Puree, Agar Agar", "£5.99", "V, D, G", "200", "A refreshing coconut and mango dessert.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Lemon Sorbet", "Lemon, Sugar, Water", "£3.99", "V, D, G", "150", "Light and zesty lemon sorbet.", R.drawable.kitchen));
     }
-
 
     private void addDishesToSection(LinearLayout sectionLayout, int startIndex, int endIndex, String title) {
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -117,19 +114,38 @@ public class activity_display_menu extends AppCompatActivity {
             // Inflate the dish card
             View dishCard = inflater.inflate(R.layout.menu_dish_card, sectionLayout, false);
 
-
             // Set the dish data into the card
             TextView dishName = dishCard.findViewById(R.id.dish_name);
             TextView dishIngredients = dishCard.findViewById(R.id.dish_ingredients);
             TextView dishPrice = dishCard.findViewById(R.id.dish_price);
             TextView dishAllergens = dishCard.findViewById(R.id.dish_allergens);
             TextView dishCalories = dishCard.findViewById(R.id.dish_calories);
+            ImageView dishImage = dishCard.findViewById(R.id.dish_image); // Image view to display the dish image
 
             dishName.setText(dish.getName());
             dishIngredients.setText("Ingredients: " + dish.getIngredients());
             dishPrice.setText("Price: " + dish.getPrice());
             dishAllergens.setText("Allergens: " + dish.getAllergens());
             dishCalories.setText("Calories: " + dish.getCalories());
+            dishImage.setImageResource(dish.getImageResId()); // Set the image placeholder
+
+            // Make the dish name clickable and navigate to the dish item page
+            dishName.setOnClickListener(v -> {
+                // Create an intent to go to the dish item page
+                Intent intent = new Intent(activity_display_menu.this, activity_display_item.class);
+
+                // Pass the dish data to the new activity
+                intent.putExtra("dish_name", dish.getName());
+                intent.putExtra("dish_ingredients", dish.getIngredients());
+                intent.putExtra("dish_price", dish.getPrice());
+                intent.putExtra("dish_allergens", dish.getAllergens());
+                intent.putExtra("dish_calories", dish.getCalories());
+                intent.putExtra("dish_description", dish.getDescription());  // Pass description
+                intent.putExtra("dish_image_resid", dish.getImageResId()); // Pass image
+
+                // Start the dish item activity
+                startActivity(intent);
+            });
 
             // Add the dish card to the section layout
             sectionLayout.addView(dishCard);

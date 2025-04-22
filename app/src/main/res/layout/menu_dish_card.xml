@@ -14,6 +14,15 @@
         android:orientation="vertical"
         android:padding="8dp">
 
+        <!-- Image View for the dish image -->
+        <ImageView
+            android:id="@+id/dish_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kitchen" />
+
+        <!-- Dish name -->
         <TextView
             android:id="@+id/dish_name"
             android:layout_width="wrap_content"
@@ -23,6 +32,7 @@
             android:textSize="14sp"
             android:textColor="#000000" />
 
+        <!-- Dish ingredients -->
         <TextView
             android:id="@+id/dish_ingredients"
             android:layout_width="wrap_content"

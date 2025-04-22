@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_display_menu">
+    tools:context=".activity_display_item">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
@@ -14,85 +14,107 @@
         android:layout_height="wrap_content"
         android:background="#8BC34A"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:titleTextColor="#050505"
+        app:titleTextColor="#000000"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Scrollable content -->
+    <!-- Dish Image at the Top -->
+    <ImageView
+        android:id="@+id/dish_image"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kitchen"
+        app:layout_constraintTop_toBottomOf="@id/toolbar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Scrollable Content Area -->
     <ScrollView
-        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/toolbar2"
+        app:layout_constraintTop_toBottomOf="@id/dish_image"
         app:layout_constraintBottom_toTopOf="@id/bottom_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:id="@+id/menuContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:gravity="center">
 
-            <!-- Starters Title -->
+            <!-- Dish Information -->
             <TextView
-                android:id="@+id/startersTitle"
+                android:id="@+id/dish_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Dish Name"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textColor="#000000"
-                android:layout_marginBottom="2dp" />
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
 
-            <!-- Starter Dishes (3 items) -->
-            <LinearLayout
-                android:id="@+id/starters"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
-            <!-- Mains Title -->
             <TextView
-                android:id="@+id/mainsTitle"
+                android:id="@+id/dish_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20sp"
+                android:text="£5.99"
+                android:textSize="24sp"
                 android:textColor="#000000"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="2dp" />
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
 
-            <!-- Main Dishes (3 items) -->
-            <LinearLayout
-                android:id="@+id/mains"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
-            <!-- Desserts Title -->
             <TextView
-                android:id="@+id/dessertsTitle"
+                android:id="@+id/dish_allergens"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:text="Allergens: V, D"
                 android:textSize="20sp"
                 android:textColor="#000000"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="2dp" />
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
 
-            <!-- Dessert Dishes (3 items) -->
-            <LinearLayout
-                android:id="@+id/desserts"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/dish_calories"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:text="Calories: 300"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/dish_ingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredients: Chickpeas, spices, herbs"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/dish_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A warm, spiced dish perfect for winter days."
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
+
         </LinearLayout>
     </ScrollView>
 
+    <!-- Bottom Bar -->
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -105,19 +127,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-
+        <!-- Social Media Buttons -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/twitter" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -131,12 +151,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/facebook" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -150,12 +168,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/insta" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,12 +185,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/tiktok" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

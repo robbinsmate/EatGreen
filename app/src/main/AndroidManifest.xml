@@ -59,8 +59,16 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <!-- Dish Item Activity -->
+        <activity
+            android:name=".activity_display_item"
+            android:theme="@style/Theme.EatGreen"
+            android:parentActivityName=".activity_display_menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity_display_menu" />
+        </activity>
+
     </application>
 
 </manifest>
-
-
