@@ -69,6 +69,16 @@
                 android:value=".activity_display_menu" />
         </activity>
 
+        <!-- Help Activity -->
+        <activity
+            android:name=".activity_display_help"
+            android:theme="@style/Theme.EatGreen"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

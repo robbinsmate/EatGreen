@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -18,6 +19,54 @@ public class MainActivity extends AppCompatActivity {
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar); // This makes the toolbar your action bar
+
+        // Get buttons from XML
+        Button veganButton = findViewById(R.id.veganButton);
+        Button vegetarianButton = findViewById(R.id.vegetarianButton);
+        Button dairyFreeButton = findViewById(R.id.dairyFreeButton);
+        Button lowCalorieButton = findViewById(R.id.lowCalorieButton);
+        Button helpButton = findViewById(R.id.helpButton);
+
+        // Set up button click listeners
+        veganButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+                startActivity(menuIntent);
+            }
+        });
+
+        vegetarianButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+                startActivity(menuIntent);
+            }
+        });
+
+        dairyFreeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+                startActivity(menuIntent);
+            }
+        });
+
+        lowCalorieButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+                startActivity(menuIntent);
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent helpIntent = new Intent(MainActivity.this, activity_display_help.class);
+                startActivity(helpIntent);
+            }
+        });
     }
 
     @Override
@@ -28,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        TextView displayTextView = findViewById(R.id.DisplayText);
-
         // Handle menu item selection
         int itemId = item.getItemId();
 
@@ -42,16 +89,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.menu_page) {
-            Intent aboutIntent = new Intent(MainActivity.this, activity_display_menu.class);
-            startActivity(aboutIntent);
+            Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(menuIntent);
             return true;
         } else if (itemId == R.id.calorie_page) {
-            Intent aboutIntent = new Intent(MainActivity.this, activity_display_counter.class);
-            startActivity(aboutIntent);
+            Intent calorieIntent = new Intent(MainActivity.this, activity_display_counter.class);
+            startActivity(calorieIntent);
             return true;
         } else if (itemId == R.id.sales_page) {
-            Intent aboutIntent = new Intent(MainActivity.this, activity_display_menu.class);
-            startActivity(aboutIntent);
+            Intent salesIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(salesIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
             Intent contactIntent = new Intent(MainActivity.this, activity_display_contact.class);
