@@ -151,7 +151,7 @@ public class activity_display_menu extends AppCompatActivity {
 
             // Add the "Add to Counter" button inside the dish card
             addToCounterButton.setOnClickListener(v -> {
-                // Add the dish to the counter
+                // Add the entire dish to the counter (full details, not just name)
                 DishCounter.getInstance().addDish(dish);
                 Toast.makeText(activity_display_menu.this, "Added to counter!", Toast.LENGTH_SHORT).show();
             });
@@ -159,5 +159,4 @@ public class activity_display_menu extends AppCompatActivity {
             sectionLayout.addView(dishCard);  // Add the card to the section
         }
     }
-
 }

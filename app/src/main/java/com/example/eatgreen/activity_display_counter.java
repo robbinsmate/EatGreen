@@ -1,19 +1,24 @@
 package com.example.eatgreen;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class activity_display_counter extends AppCompatActivity {
 
-    private TextView counterDisplay;
+    private LinearLayout counterLayout;
     private TextView totalCaloriesDisplay;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +28,7 @@ public class activity_display_counter extends AppCompatActivity {
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
-        counterDisplay = findViewById(R.id.counterDisplay);
+        counterLayout = findViewById(R.id.counterDisplayLayout); // Make sure to define this LinearLayout in your XML
         totalCaloriesDisplay = findViewById(R.id.totalCalories);
 
         // Display the current items in the counter
@@ -48,12 +53,26 @@ public class activity_display_counter extends AppCompatActivity {
         StringBuilder items = new StringBuilder();
         int totalCalories = 0;
 
+        // Clear previous counter layout items
+        counterLayout.removeAllViews();
+
+        // Iterate over dishes in the counter
         for (DishList dish : DishCounter.getInstance().getDishes()) {
-            items.append(dish.getName()).append("\n");
+            // Create a layout for each dish to display full details
+            TextView dishDetails = new TextView(this);
+            dishDetails.setText("Name: " + dish.getName() +
+                    "\nIngredients: " + dish.getIngredients() +
+                    "\nPrice: " + dish.getPrice() +
+                    "\nCalories: " + dish.getCalories() +
+                    "\nAllergens: " + dish.getAllergens() +
+                    "\nDescription: " + dish.getDescription());
+
+            counterLayout.addView(dishDetails); // Add dish details to the layout
+
+            // Add to total calories
             totalCalories += Integer.parseInt(dish.getCalories());
         }
 
-        counterDisplay.setText(items.toString());
         totalCaloriesDisplay.setText("Total Calories: " + totalCalories);
     }
 
