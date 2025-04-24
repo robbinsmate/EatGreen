@@ -3,8 +3,10 @@ package com.example.eatgreen;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -50,29 +52,46 @@ public class activity_display_counter extends AppCompatActivity {
     }
 
     private void displayCounterItems() {
-        StringBuilder items = new StringBuilder();
         int totalCalories = 0;
 
         // Clear previous counter layout items
         counterLayout.removeAllViews();
 
-        // Iterate over dishes in the counter
-        for (DishList dish : DishCounter.getInstance().getDishes()) {
-            // Create a layout for each dish to display full details
-            TextView dishDetails = new TextView(this);
-            dishDetails.setText("Name: " + dish.getName() +
-                    "\nIngredients: " + dish.getIngredients() +
-                    "\nPrice: " + dish.getPrice() +
-                    "\nCalories: " + dish.getCalories() +
-                    "\nAllergens: " + dish.getAllergens() +
-                    "\nDescription: " + dish.getDescription());
+        // Inflate the dish cards for each dish in the counter
+        LayoutInflater inflater = LayoutInflater.from(this);
 
-            counterLayout.addView(dishDetails); // Add dish details to the layout
+        for (DishList dish : DishCounter.getInstance().getDishes()) {
+            // Inflate the dish card layout
+            View dishCard = inflater.inflate(R.layout.menu_dish_card, counterLayout, false);
+
+            // Set the dish data into the card
+            TextView dishName = dishCard.findViewById(R.id.dish_name);
+            TextView dishIngredients = dishCard.findViewById(R.id.dish_ingredients);
+            TextView dishPrice = dishCard.findViewById(R.id.dish_price);
+            TextView dishAllergens = dishCard.findViewById(R.id.dish_allergens);
+            TextView dishCalories = dishCard.findViewById(R.id.dish_calories);
+            ImageView dishImage = dishCard.findViewById(R.id.dish_image);
+            Button addToCounterButton = dishCard.findViewById(R.id.addToCounterButton); // Button inside the card
+
+            // Populate the dish data
+            dishName.setText(dish.getName());
+            dishIngredients.setText("Ingredients: " + dish.getIngredients());
+            dishPrice.setText("Price: " + dish.getPrice());
+            dishAllergens.setText("Allergens: " + dish.getAllergens());
+            dishCalories.setText("Calories: " + dish.getCalories());
+            dishImage.setImageResource(dish.getImageResId());
+
+            // Set the click listener for "Add to Counter" button
+            addToCounterButton.setVisibility(View.GONE); // No need for this in the counter view
+
+            // Add the dish card to the layout
+            counterLayout.addView(dishCard);
 
             // Add to total calories
             totalCalories += Integer.parseInt(dish.getCalories());
         }
 
+        // Update the total calories display
         totalCaloriesDisplay.setText("Total Calories: " + totalCalories);
     }
 
