@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class activity_display_counter extends AppCompatActivity {
+
+    private TextView counterDisplay;
+    private TextView totalCaloriesDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +21,40 @@ public class activity_display_counter extends AppCompatActivity {
 
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
-        setSupportActionBar(myToolBar); // This makes the toolbar your action bar
+        setSupportActionBar(myToolBar);
+
+        counterDisplay = findViewById(R.id.counterDisplay);
+        totalCaloriesDisplay = findViewById(R.id.totalCalories);
+
+        // Display the current items in the counter
+        displayCounterItems();
+
+        // Button to clear items
+        Button clearButton = findViewById(R.id.clearButton);
+        clearButton.setOnClickListener(v -> {
+            DishCounter.getInstance().clearItems();
+            displayCounterItems();
+        });
+
+        // Button to go back to the menu
+        Button backToMenuButton = findViewById(R.id.backToMenuButton);
+        backToMenuButton.setOnClickListener(v -> {
+            Intent menuIntent = new Intent(this, activity_display_menu.class);
+            startActivity(menuIntent);
+        });
+    }
+
+    private void displayCounterItems() {
+        StringBuilder items = new StringBuilder();
+        int totalCalories = 0;
+
+        for (DishList dish : DishCounter.getInstance().getDishes()) {
+            items.append(dish.getName()).append("\n");
+            totalCalories += Integer.parseInt(dish.getCalories());
+        }
+
+        counterDisplay.setText(items.toString());
+        totalCaloriesDisplay.setText("Total Calories: " + totalCalories);
     }
 
     @Override
@@ -28,39 +65,33 @@ public class activity_display_counter extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        TextView displayTextView = findViewById(R.id.DisplayText);
-
-        // Handle menu item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
-            Intent aboutIntent = new Intent(activity_display_counter.this, MainActivity.class);
-            startActivity(aboutIntent);
+            Intent homeIntent = new Intent(this, MainActivity.class);
+            startActivity(homeIntent);
             return true;
         } else if (itemId == R.id.about_page) {
-            // Navigate to AboutActivity
-            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_about.class);
+            Intent aboutIntent = new Intent(this, activity_display_about.class);
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.menu_page) {
-            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_menu.class);
-            startActivity(aboutIntent);
+            Intent menuIntent = new Intent(this, activity_display_menu.class);
+            startActivity(menuIntent);
             return true;
         } else if (itemId == R.id.calorie_page) {
-            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_counter.class);
-            startActivity(aboutIntent);
+            Intent calorieIntent = new Intent(this, activity_display_counter.class);
+            startActivity(calorieIntent);
             return true;
         } else if (itemId == R.id.sales_page) {
-            Intent aboutIntent = new Intent(activity_display_counter.this, activity_display_menu.class);
-            startActivity(aboutIntent);
+            Intent salesIntent = new Intent(this, activity_display_menu.class);
+            startActivity(salesIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
-            // Navigate to AboutActivity
-            Intent contactIntent = new Intent(activity_display_counter.this, activity_display_contact.class);
+            Intent contactIntent = new Intent(this, activity_display_contact.class);
             startActivity(contactIntent);
             return true;
-        } else {
-            return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 }

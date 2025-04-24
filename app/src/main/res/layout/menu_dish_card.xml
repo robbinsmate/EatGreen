@@ -76,12 +76,13 @@
                 android:textColor="#000000" />
         </LinearLayout>
 
+        <!-- Button to add dish to counter (replaces the old TextView) -->
         <Button
-            android:id="@+id/add_to_calculator"
+            android:id="@+id/addToCounterButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="Add to Calculator"
+            android:text="Add to Counter"
             android:textSize="12sp"
             android:textColor="#000000"
             android:backgroundTint="#FFFFFF" />

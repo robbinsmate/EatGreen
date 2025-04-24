@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -27,7 +29,6 @@ public class activity_display_menu extends AppCompatActivity {
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
-
 
         // Populate the dishListArray with sample data
         populateDishList();
@@ -111,7 +112,7 @@ public class activity_display_menu extends AppCompatActivity {
         for (int i = startIndex; i < endIndex; i++) {
             DishList dish = dishListArray.get(i);
 
-            // Inflate the dish card
+            // Inflate the dish card layout
             View dishCard = inflater.inflate(R.layout.menu_dish_card, sectionLayout, false);
 
             // Set the dish data into the card
@@ -120,14 +121,15 @@ public class activity_display_menu extends AppCompatActivity {
             TextView dishPrice = dishCard.findViewById(R.id.dish_price);
             TextView dishAllergens = dishCard.findViewById(R.id.dish_allergens);
             TextView dishCalories = dishCard.findViewById(R.id.dish_calories);
-            ImageView dishImage = dishCard.findViewById(R.id.dish_image); // Image view to display the dish image
+            ImageView dishImage = dishCard.findViewById(R.id.dish_image);
+            Button addToCounterButton = dishCard.findViewById(R.id.addToCounterButton);  // Button inside the card
 
             dishName.setText(dish.getName());
             dishIngredients.setText("Ingredients: " + dish.getIngredients());
             dishPrice.setText("Price: " + dish.getPrice());
             dishAllergens.setText("Allergens: " + dish.getAllergens());
             dishCalories.setText("Calories: " + dish.getCalories());
-            dishImage.setImageResource(dish.getImageResId()); // Set the image placeholder
+            dishImage.setImageResource(dish.getImageResId());
 
             // Make the dish name clickable and navigate to the dish item page
             dishName.setOnClickListener(v -> {
@@ -140,15 +142,22 @@ public class activity_display_menu extends AppCompatActivity {
                 intent.putExtra("dish_price", dish.getPrice());
                 intent.putExtra("dish_allergens", dish.getAllergens());
                 intent.putExtra("dish_calories", dish.getCalories());
-                intent.putExtra("dish_description", dish.getDescription());  // Pass description
-                intent.putExtra("dish_image_resid", dish.getImageResId()); // Pass image
+                intent.putExtra("dish_description", dish.getDescription());
+                intent.putExtra("dish_image_resid", dish.getImageResId());
 
                 // Start the dish item activity
                 startActivity(intent);
             });
 
-            // Add the dish card to the section layout
-            sectionLayout.addView(dishCard);
+            // Add the "Add to Counter" button inside the dish card
+            addToCounterButton.setOnClickListener(v -> {
+                // Add the dish to the counter
+                DishCounter.getInstance().addDish(dish);
+                Toast.makeText(activity_display_menu.this, "Added to counter!", Toast.LENGTH_SHORT).show();
+            });
+
+            sectionLayout.addView(dishCard);  // Add the card to the section
         }
     }
+
 }
