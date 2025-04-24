@@ -26,7 +26,7 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/kitchen_image"
         android:scaleType="centerCrop"
-        android:src="@drawable/kitchen"
+        android:src="@drawable/resturant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/kitchen" />
+                    android:src="@drawable/soup" />
 
                 <Button
                     android:id="@+id/lentilSoupButton"
@@ -170,7 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/kitchen" />
+                    android:src="@drawable/salmon" />
 
                 <Button
                     android:id="@+id/salmonButton"

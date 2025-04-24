@@ -85,17 +85,17 @@ public class activity_display_menu extends AppCompatActivity {
 
     private void populateDishList() {
         // Sample dishes (Added description and image placeholder)
-        dishListArray.add(new DishList("Spiced Lentil Soup", "Lentils, Spices, Vegetable Broth", "£5.99", "V, Ve, D", "200", "A warm, spiced dish perfect for winter days.", R.drawable.kitchen));
-        dishListArray.add(new DishList("Crispy Sweet Potato Fries", "Sweet Potatoes, Olive Oil, Spices", "£4.99", "V, Ve, G", "220", "Crispy fries, perfectly seasoned.", R.drawable.kitchen));
-        dishListArray.add(new DishList("Stuffed Mushrooms", "Mushrooms, Quinoa, Garlic, Herbs", "£6.49", "Ve, D, G", "240", "Stuffed mushrooms with quinoa and herbs.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Spiced Lentil Soup", "Lentils, Spices, Vegetable Broth", "£5.99", "V, Ve, D", "200", "A warm, spiced dish perfect for winter days.", R.drawable.soup));
+        dishListArray.add(new DishList("Crispy Sweet Potato Fries", "Sweet Potatoes, Olive Oil, Spices", "£4.99", "V, Ve, G", "220", "Crispy fries, perfectly seasoned.", R.drawable.fries));
+        dishListArray.add(new DishList("Stuffed Mushrooms", "Mushrooms, Quinoa, Garlic, Herbs", "£6.49", "Ve, D, G", "240", "Stuffed mushrooms with quinoa and herbs.", R.drawable.mushroom));
 
-        dishListArray.add(new DishList("Salmon with Asparagus", "Fresh Salmon, Asparagus, Lemon", "£14.99", "D, G", "500", "Grilled salmon served with fresh asparagus.", R.drawable.kitchen));
-        dishListArray.add(new DishList("Grilled Vegetable Skewers", "Zucchini, Bell Peppers, Mushrooms, Olive Oil", "£11.99", "V, Ve, G", "350", "Grilled vegetables skewered for flavor.", R.drawable.kitchen));
-        dishListArray.add(new DishList("Quinoa-Stuffed Bell Peppers", "Quinoa, Vegetables, Spices", "£12.99", "V, Ve, D, G", "400", "Bell peppers stuffed with quinoa and spices.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Salmon with Asparagus", "Fresh Salmon, Asparagus, Lemon", "£14.99", "D, G", "500", "Grilled salmon served with fresh asparagus.", R.drawable.salmon));
+        dishListArray.add(new DishList("Grilled Vegetable Skewers", "Zucchini, Bell Peppers, Mushrooms, Olive Oil", "£11.99", "V, Ve, G", "350", "Grilled vegetables skewered for flavor.", R.drawable.veg));
+        dishListArray.add(new DishList("Quinoa-Stuffed Bell Peppers", "Quinoa, Vegetables, Spices", "£12.99", "V, Ve, D, G", "400", "Bell peppers stuffed with quinoa and spices.", R.drawable.pepper));
 
-        dishListArray.add(new DishList("Vegan Chocolate Cake", "Cocoa, Almond Flour, Agave Syrup", "£4.99", "V, D", "220", "Rich and decadent vegan chocolate cake.", R.drawable.kitchen));
-        dishListArray.add(new DishList("Coconut Mango Pannacotta", "Coconut Milk, Mango Puree, Agar Agar", "£5.99", "V, D, G", "200", "A refreshing coconut and mango dessert.", R.drawable.kitchen));
-        dishListArray.add(new DishList("Lemon Sorbet", "Lemon, Sugar, Water", "£3.99", "V, D, G", "150", "Light and zesty lemon sorbet.", R.drawable.kitchen));
+        dishListArray.add(new DishList("Vegan Chocolate Cake", "Cocoa, Almond Flour, Agave Syrup", "£4.99", "V, D", "220", "Rich and decadent vegan chocolate cake.", R.drawable.cake));
+        dishListArray.add(new DishList("Coconut Mango Panna Cotta", "Coconut Milk, Mango Puree, Agar Agar", "£5.99", "V, D, G", "200", "A refreshing coconut and mango dessert.", R.drawable.panna));
+        dishListArray.add(new DishList("Lemon Sorbet", "Lemon, Sugar, Water", "£3.99", "V, D, G", "150", "Light and zesty lemon sorbet.", R.drawable.lemon));
     }
 
     private void addDishesToSection(LinearLayout sectionLayout, int startIndex, int endIndex, String title) {
