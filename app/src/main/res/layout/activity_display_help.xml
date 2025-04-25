@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#A5D6A7"
+                android:background="#8BC34A"
                 android:padding="16dp"
                 android:layout_marginBottom="12dp"
                 android:elevation="4dp">
@@ -82,7 +82,7 @@
                     android:id="@+id/goToHomeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Go to Home" />
+                    android:text="@string/home_button" />
             </LinearLayout>
 
             <!-- Menu -->
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#A5D6A7"
+                android:background="#8BC34A"
                 android:padding="16dp"
                 android:layout_marginBottom="12dp"
                 android:elevation="4dp">
@@ -116,7 +116,7 @@
                     android:id="@+id/goToMenuButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Go to Menu" />
+                    android:text="@string/menu_button" />
             </LinearLayout>
 
             <!-- Counter -->
@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#A5D6A7"
+                android:background="#8BC34A"
                 android:padding="16dp"
                 android:layout_marginBottom="12dp"
                 android:elevation="4dp">
@@ -150,15 +150,15 @@
                     android:id="@+id/goToCounterButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Go to Counter" />
+                    android:text="@string/calorie_button" />
             </LinearLayout>
 
-            <!-- About -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#A5D6A7"
+                android:background="#8BC34A"
                 android:padding="16dp"
                 android:layout_marginBottom="12dp"
                 android:elevation="4dp">
@@ -184,7 +184,7 @@
                     android:id="@+id/goToAboutButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Go to About" />
+                    android:text="@string/about_button" />
             </LinearLayout>
 
             <!-- Contact -->
@@ -192,7 +192,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#A5D6A7"
+                android:background="#8BC34A"
                 android:padding="16dp"
                 android:layout_marginBottom="12dp"
                 android:elevation="4dp">
@@ -218,94 +218,107 @@
                     android:id="@+id/goToContactButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Go to Contact" />
+                    android:text="@string/contact_button" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Bar -->
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#8BC34A"
-        android:padding="10dp"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:baselineAligned="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Twitter -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/twitter_social"
                 android:src="@drawable/twitter" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@twitter.com"
-                android:textColor="#000000" />
+                android:text="@string/twitter_social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Facebook -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/facebook_Social"
                 android:src="@drawable/facebook" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@facebook.com"
-                android:textColor="#000000" />
+                android:text="@string/facebook_Social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Instagram -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/insta" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/instagram_social"
+                android:src="@drawable/instagram" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@instagram.com"
-                android:textColor="#000000" />
+                android:text="@string/instagram_social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- TikTok -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/tiktok_social"
                 android:src="@drawable/tiktok" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@tiktok.com"
-                android:textColor="#000000" />
+                android:text="@string/tiktok_social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 

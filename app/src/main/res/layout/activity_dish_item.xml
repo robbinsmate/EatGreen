@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_display_item">
 
-    <!-- Toolbar -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
@@ -19,20 +19,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Dish Image at the Top -->
+
     <ImageView
         android:id="@+id/dish_image"
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/placeholder"
         android:scaleType="centerCrop"
-        android:src="@drawable/kitchen"
-        app:layout_constraintTop_toBottomOf="@id/toolbar2"
+        android:src="@drawable/cake"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar2" />
 
-    <!-- Scrollable Content Area -->
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -49,12 +49,11 @@
             android:padding="16dp"
             android:gravity="center">
 
-            <!-- Dish Information -->
             <TextView
                 android:id="@+id/dish_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dish Name"
+                android:text=""
                 android:textStyle="bold"
                 android:textSize="30sp"
                 android:textColor="#000000"
@@ -65,7 +64,7 @@
                 android:id="@+id/dish_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="£5.99"
+                android:text=""
                 android:textSize="24sp"
                 android:textColor="#000000"
                 android:gravity="center"
@@ -75,7 +74,7 @@
                 android:id="@+id/dish_allergens"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Allergens: V, D"
+                android:text=""
                 android:textSize="20sp"
                 android:textColor="#000000"
                 android:gravity="center"
@@ -85,7 +84,7 @@
                 android:id="@+id/dish_calories"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calories: 300"
+                android:text=""
                 android:textSize="20sp"
                 android:textColor="#000000"
                 android:gravity="center"
@@ -95,7 +94,7 @@
                 android:id="@+id/dish_ingredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ingredients: Chickpeas, spices, herbs"
+                android:text=""
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:gravity="center"
@@ -105,7 +104,7 @@
                 android:id="@+id/dish_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="A warm, spiced dish perfect for winter days."
+                android:text=""
                 android:textSize="18sp"
                 android:textColor="#000000"
                 android:gravity="center"
@@ -114,7 +113,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Bar -->
+
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -123,26 +122,30 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
+        android:baselineAligned="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Social Media Buttons -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/twitter_social"
                 android:src="@drawable/twitter" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/twitter_social"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -150,16 +153,21 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/facebook_Social"
                 android:src="@drawable/facebook" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/facebook_Social"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -167,16 +175,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/insta" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/instagram_social"
+                android:src="@drawable/instagram" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/instagram_social"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -184,17 +196,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/tiktok_social"
                 android:src="@drawable/tiktok" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tiktok_social"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
