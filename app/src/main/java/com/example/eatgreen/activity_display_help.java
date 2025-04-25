@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,7 +17,40 @@ public class activity_display_help extends AppCompatActivity {
 
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
-        setSupportActionBar(myToolBar); // This makes the toolbar your action bar
+        setSupportActionBar(myToolBar);
+
+        // Button setup
+        Button homeButton = findViewById(R.id.goToHomeButton);
+        Button menuButton = findViewById(R.id.goToMenuButton);
+        Button counterButton = findViewById(R.id.goToCounterButton);
+        Button aboutButton = findViewById(R.id.goToAboutButton);
+        Button contactButton = findViewById(R.id.goToContactButton);
+
+        // Set click listeners
+        homeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_display_help.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        menuButton.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_display_help.this, activity_display_menu.class);
+            startActivity(intent);
+        });
+
+        counterButton.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_display_help.this, activity_display_counter.class);
+            startActivity(intent);
+        });
+
+        aboutButton.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_display_help.this, activity_display_about.class);
+            startActivity(intent);
+        });
+
+        contactButton.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_display_help.this, activity_display_contact.class);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -28,36 +61,26 @@ public class activity_display_help extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        TextView displayTextView = findViewById(R.id.DisplayText);
 
-        // Handle menu item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
-            Intent aboutIntent = new Intent(activity_display_help.this, MainActivity.class);
-            startActivity(aboutIntent);
+            startActivity(new Intent(this, MainActivity.class));
             return true;
         } else if (itemId == R.id.about_page) {
-            // Navigate to AboutActivity
-            Intent aboutIntent = new Intent(activity_display_help.this, activity_display_about.class);
-            startActivity(aboutIntent);
+            startActivity(new Intent(this, activity_display_about.class));
             return true;
         } else if (itemId == R.id.menu_page) {
-            Intent aboutIntent = new Intent(activity_display_help.this, activity_display_menu.class);
-            startActivity(aboutIntent);
+            startActivity(new Intent(this, activity_display_menu.class));
             return true;
         } else if (itemId == R.id.calorie_page) {
-            Intent aboutIntent = new Intent(activity_display_help.this, activity_display_counter.class);
-            startActivity(aboutIntent);
+            startActivity(new Intent(this, activity_display_counter.class));
             return true;
         } else if (itemId == R.id.sales_page) {
-            Intent aboutIntent = new Intent(activity_display_help.this, activity_display_menu.class);
-            startActivity(aboutIntent);
+            startActivity(new Intent(this, activity_display_menu.class));
             return true;
         } else if (itemId == R.id.contact_page) {
-            // Navigate to AboutActivity
-            Intent contactIntent = new Intent(activity_display_help.this, activity_display_contact.class);
-            startActivity(contactIntent);
+            startActivity(new Intent(this, activity_display_contact.class));
             return true;
         } else {
             return super.onOptionsItemSelected(item);
