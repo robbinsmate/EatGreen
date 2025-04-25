@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_display_menu">
 
-    <!-- Toolbar -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
@@ -20,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Scrollable content -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -38,7 +37,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Starters Title -->
             <TextView
                 android:id="@+id/startersTitle"
                 android:layout_width="wrap_content"
@@ -48,14 +46,12 @@
                 android:textColor="#000000"
                 android:layout_marginBottom="2dp" />
 
-            <!-- Starter Dishes (3 items) -->
             <LinearLayout
                 android:id="@+id/starters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
 
-            <!-- Mains Title -->
             <TextView
                 android:id="@+id/mainsTitle"
                 android:layout_width="wrap_content"
@@ -66,14 +62,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="2dp" />
 
-            <!-- Main Dishes (3 items) -->
             <LinearLayout
                 android:id="@+id/mains"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
 
-            <!-- Desserts Title -->
             <TextView
                 android:id="@+id/dessertsTitle"
                 android:layout_width="wrap_content"
@@ -84,7 +78,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="2dp" />
 
-            <!-- Dessert Dishes (3 items) -->
             <LinearLayout
                 android:id="@+id/desserts"
                 android:layout_width="match_parent"

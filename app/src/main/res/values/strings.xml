@@ -50,4 +50,8 @@
     <string name="counter_add_item">Add Items</string>
     <string name="counter_clear_item">Clear Items</string>
     <string name="counter_total_calorie">Total Calories</string>
-    </resources>
+    <string name="dish_ingredients">Ingredients:</string>
+    <string name="dish_price">Price:</string>
+    <string name="dish_allergens">Allergens:</string>
+    <string name="dish_calories">Calories:</string>
+</resources>

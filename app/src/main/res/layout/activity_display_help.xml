@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Toolbar -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
@@ -21,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Scrollable Help Content -->
     <ScrollView
         android:id="@+id/helpScroll"
         android:layout_width="0dp"
@@ -38,7 +37,6 @@
             android:orientation="vertical"
             android:paddingBottom="60dp">
 
-            <!-- Toolbar Explanation -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,8 +48,7 @@
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
-            <!-- Help Cards -->
-            <!-- Home -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +82,7 @@
                     android:text="@string/home_button" />
             </LinearLayout>
 
-            <!-- Menu -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,7 +116,7 @@
                     android:text="@string/menu_button" />
             </LinearLayout>
 
-            <!-- Counter -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -188,7 +185,7 @@
                     android:text="@string/about_button" />
             </LinearLayout>
 
-            <!-- Contact -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

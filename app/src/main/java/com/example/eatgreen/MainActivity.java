@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,44 +27,29 @@ public class MainActivity extends AppCompatActivity {
         Button helpButton = findViewById(R.id.helpButton);
 
         // Set up button click listeners
-        veganButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
-                startActivity(menuIntent);
-            }
+        veganButton.setOnClickListener(v -> {
+            Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(menuIntent);
         });
 
-        vegetarianButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
-                startActivity(menuIntent);
-            }
+        vegetarianButton.setOnClickListener(v -> {
+            Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(menuIntent);
         });
 
-        dairyFreeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
-                startActivity(menuIntent);
-            }
+        dairyFreeButton.setOnClickListener(v -> {
+            Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(menuIntent);
         });
 
-        lowCalorieButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
-                startActivity(menuIntent);
-            }
+        lowCalorieButton.setOnClickListener(v -> {
+            Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
+            startActivity(menuIntent);
         });
 
-        helpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent helpIntent = new Intent(MainActivity.this, activity_display_help.class);
-                startActivity(helpIntent);
-            }
+        helpButton.setOnClickListener(v -> {
+            Intent helpIntent = new Intent(MainActivity.this, activity_display_help.class);
+            startActivity(helpIntent);
         });
     }
 

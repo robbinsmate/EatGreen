@@ -51,6 +51,7 @@ public class activity_display_counter extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void displayCounterItems() {
         int totalCalories = 0;
 

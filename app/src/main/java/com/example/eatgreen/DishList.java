@@ -1,13 +1,13 @@
 package com.example.eatgreen;
 
 public class DishList {
-    private String name;
-    private String ingredients;
-    private String price;
-    private String allergens;
-    private String calories;
-    private String description;  // Added description
-    private int imageResId;      // Added image resource ID
+    private final String name;
+    private final String ingredients;
+    private final String price;
+    private final String allergens;
+    private final String calories;
+    private final String description;  // Added description
+    private final int imageResId;      // Added image resource ID
 
     // Updated constructor
     public DishList(String name, String ingredients, String price, String allergens, String calories, String description, int imageResId) {

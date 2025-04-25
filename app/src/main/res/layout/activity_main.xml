@@ -122,7 +122,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- First Recipe Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -157,7 +156,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Second Recipe Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -193,7 +191,6 @@
 
     </LinearLayout>
 
-    <!-- Help Button -->
     <Button
         android:id="@+id/helpButton"
         android:layout_width="wrap_content"

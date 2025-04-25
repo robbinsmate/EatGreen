@@ -1,5 +1,6 @@
 package com.example.eatgreen;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 
 public class activity_display_item extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class activity_display_item extends AppCompatActivity {
         String dishAllergens = getIntent().getStringExtra("dish_allergens");
         String dishCalories = getIntent().getStringExtra("dish_calories");
         String dishDescription = getIntent().getStringExtra("dish_description");
-        int dishImageResId = getIntent().getIntExtra("dish_image_resid", -1);
+        int dishImageResId = getIntent().getIntExtra("dish_image", -1);
 
         // Set the data to the UI elements
         TextView nameTextView = findViewById(R.id.dish_name);

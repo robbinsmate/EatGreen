@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_display_counter">
 
-    <!-- Toolbar -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
@@ -17,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- ScrollView to allow scrolling when counter items overflow -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -29,7 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/actionButtonsLayout">
 
-        <!-- Counter Display (LinearLayout to hold dynamically added items) -->
         <LinearLayout
             android:id="@+id/counterDisplayLayout"
             android:layout_width="match_parent"
@@ -38,7 +36,6 @@
             android:padding="16dp" />
     </ScrollView>
 
-    <!-- Action Buttons and Total Calories in the Same Row -->
     <LinearLayout
         android:id="@+id/actionButtonsLayout"
         android:layout_width="match_parent"
@@ -51,7 +48,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottom_bar">
 
-        <!-- Add Items Button -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +68,6 @@
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Clear Items Button -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

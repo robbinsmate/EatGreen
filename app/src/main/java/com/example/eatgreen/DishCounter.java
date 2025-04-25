@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class DishCounter {
     private static DishCounter instance;
-    private ArrayList<DishList> dishes;
+    private final ArrayList<DishList> dishes;
 
     private DishCounter() {
         dishes = new ArrayList<>();

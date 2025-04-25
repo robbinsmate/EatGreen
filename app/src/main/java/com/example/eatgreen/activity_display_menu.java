@@ -1,5 +1,6 @@
 package com.example.eatgreen;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,12 +15,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
 public class activity_display_menu extends AppCompatActivity {
 
-    private ArrayList<DishList> dishListArray = new ArrayList<>();
+    private final ArrayList<DishList> dishListArray = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,10 +96,11 @@ public class activity_display_menu extends AppCompatActivity {
         dishListArray.add(new DishList("Quinoa-Stuffed Bell Peppers", "Quinoa, Vegetables, Spices", "£12.99", "V, Ve, D, G", "400", "Bell peppers stuffed with quinoa and spices.", R.drawable.pepper));
 
         dishListArray.add(new DishList("Vegan Chocolate Cake", "Cocoa, Almond Flour, Agave Syrup", "£4.99", "V, D", "220", "Rich and decadent vegan chocolate cake.", R.drawable.cake));
-        dishListArray.add(new DishList("Coconut Mango Panna Cotta", "Coconut Milk, Mango Puree, Agar Agar", "£5.99", "V, D, G", "200", "A refreshing coconut and mango dessert.", R.drawable.panna));
+        dishListArray.add(new DishList("Coconut Mango PannaCotta", "Coconut Milk, Mango Puree, Agar Agar", "£5.99", "V, D, G", "200", "A refreshing coconut and mango dessert.", R.drawable.panna));
         dishListArray.add(new DishList("Lemon Sorbet", "Lemon, Sugar, Water", "£3.99", "V, D, G", "150", "Light and zesty lemon sorbet.", R.drawable.lemon));
     }
 
+    @SuppressLint("SetTextI18n")
     private void addDishesToSection(LinearLayout sectionLayout, int startIndex, int endIndex, String title) {
         LayoutInflater inflater = LayoutInflater.from(this);
 
@@ -105,7 +108,7 @@ public class activity_display_menu extends AppCompatActivity {
         TextView sectionTitle = new TextView(this);
         sectionTitle.setText(title);
         sectionTitle.setTextSize(20);
-        sectionTitle.setTextColor(getResources().getColor(android.R.color.black));
+        sectionTitle.setTextColor(ContextCompat.getColor(this, android.R.color.black));
         sectionLayout.addView(sectionTitle);
 
         // Add dishes to the section
@@ -143,7 +146,7 @@ public class activity_display_menu extends AppCompatActivity {
                 intent.putExtra("dish_allergens", dish.getAllergens());
                 intent.putExtra("dish_calories", dish.getCalories());
                 intent.putExtra("dish_description", dish.getDescription());
-                intent.putExtra("dish_image_resid", dish.getImageResId());
+                intent.putExtra("dish_image", dish.getImageResId());
 
                 // Start the dish item activity
                 startActivity(intent);

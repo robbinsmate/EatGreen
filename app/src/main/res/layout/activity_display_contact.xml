@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_display_contact">
 
-    <!-- Toolbar -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
@@ -15,7 +15,6 @@
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Title Text -->
     <TextView
         android:id="@+id/contactTitle"
         android:layout_width="wrap_content"
@@ -28,7 +27,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar2" />
 
-    <!-- Contact Information -->
     <TextView
         android:id="@+id/contactInfo"
         android:layout_width="wrap_content"
@@ -41,7 +39,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/contactTitle" />
 
-    <!-- Email Input Field -->
     <EditText
         android:id="@+id/email_edit_text"
         android:layout_width="400dp"
@@ -56,7 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/contactInfo" />
 
-    <!-- Message Input Field -->
     <EditText
         android:id="@+id/message_edit_text"
         android:layout_width="400dp"
@@ -72,7 +68,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
 
-    <!-- Send Button -->
     <Button
         android:id="@+id/send_button"
         android:layout_width="wrap_content"

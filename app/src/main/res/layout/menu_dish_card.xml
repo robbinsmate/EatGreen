@@ -15,7 +15,6 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <!-- Image View for the dish image -->
         <ImageView
             android:id="@+id/dish_image"
             android:layout_width="match_parent"
@@ -24,7 +23,6 @@
             android:scaleType="centerCrop"
             android:src="@drawable/kitchen" />
 
-        <!-- Dish name -->
         <TextView
             android:id="@+id/dish_name"
             android:layout_width="wrap_content"
@@ -34,16 +32,14 @@
             android:textSize="14sp"
             android:textColor="#000000" />
 
-        <!-- Dish ingredients -->
         <TextView
             android:id="@+id/dish_ingredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="12sp"
-            android:textColor="#000000" />
+            android:text="@string/dish_ingredients"
+            android:textColor="#000000"
+            android:textSize="12sp" />
 
-        <!-- Horizontal layout for Price, Allergens, and Calories -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,32 +49,31 @@
             <TextView
                 android:id="@+id/dish_price"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="12sp"
-                android:textColor="#000000" />
+                android:layout_weight="1"
+                android:text="@string/dish_price"
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/dish_allergens"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="12sp"
-                android:textColor="#000000" />
+                android:layout_weight="1"
+                android:text="@string/dish_allergens"
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/dish_calories"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="12sp"
-                android:textColor="#000000" />
+                android:layout_weight="1"
+                android:text="@string/dish_calories"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Button to add dish to counter (replaces the old TextView) -->
         <Button
             android:id="@+id/addToCounterButton"
             android:layout_width="match_parent"
