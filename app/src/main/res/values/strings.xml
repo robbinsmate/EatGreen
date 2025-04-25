@@ -26,4 +26,28 @@
     <string name="contact_us_email">Enter your email</string>
     <string name="contact_us_message">Enter your message</string>
     <string name="send_button">Send</string>
-</resources>
+    <string name="help_nav_bar">Use the top bar to move around the app. You can go to the Home, Menu, Counter, About, or Contact pages.</string>
+    <string name="help_home_title">Home Page</string>
+    <string name="help_home_text">The first screen you see. Tap items or use the bar to explore the app.</string>
+    <string name="help_menu_title">Menu Page</string>
+    <string name="help_menu_text">See a list of all available food items. Tap any item for more info.</string>
+    <string name="help_counter_title">Counter Page</string>
+    <string name="help_counter_text">Track your servings with a simple counter that can add items using the menu.</string>
+    <string name="help_about_title">About Page</string>
+    <string name="help_about_text">Learn more about the EatGreen and what we created.</string>
+    <string name="help_contact_title">Contact Page</string>
+    <string name="help_contact_text">Get in touch with us or follow us on social media.</string>
+    <string name="home_help_button">Help</string>
+    <string name="home_salmon_button">Salmon with Asparagus</string>
+    <string name="home_soup_button">Spiced Lentil Soup</string>
+    <string name="home_welcome_text">Welcome to Eat Green!</string>
+    <string name="home_vegan_button">Vegan</string>
+    <string name="home_vegetarian_button">Vegetarian</string>
+    <string name="home_dairy_button">Dairy Free</string>
+    <string name="home_calorie_button">Low Calorie</string>
+    <string name="add_calc_button">Add to Counter</string>
+    <string name="counter_scroll_view">0</string>
+    <string name="counter_add_item">Add Items</string>
+    <string name="counter_clear_item">Clear Items</string>
+    <string name="counter_total_calorie">Total Calories</string>
+    </resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
@@ -19,6 +20,7 @@
             android:id="@+id/dish_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:contentDescription="@string/placeholder"
             android:scaleType="centerCrop"
             android:src="@drawable/kitchen" />
 
@@ -27,7 +29,7 @@
             android:id="@+id/dish_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dish Name"
+            android:text=""
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="#000000" />
@@ -37,7 +39,7 @@
             android:id="@+id/dish_ingredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingredients: ..."
+            android:text=""
             android:textSize="12sp"
             android:textColor="#000000" />
 
@@ -53,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Price: £0.00"
+                android:text=""
                 android:textSize="12sp"
                 android:textColor="#000000" />
 
@@ -62,7 +64,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Allergens: ..."
+                android:text=""
                 android:textSize="12sp"
                 android:textColor="#000000" />
 
@@ -71,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Calories: ..."
+                android:text=""
                 android:textSize="12sp"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -82,9 +84,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="Add to Counter"
-            android:textSize="12sp"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/add_calc_button"
             android:textColor="#000000"
-            android:backgroundTint="#FFFFFF" />
+            android:textSize="12sp"
+            tools:ignore="VisualLintButtonSize" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

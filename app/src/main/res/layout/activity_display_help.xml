@@ -42,13 +42,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Use the top bar to move around the app. You can go to the Home, Menu, Counter, About, or Contact pages by tapping the options in the top right."
-                android:textSize="16sp"
-                android:textColor="#000000"
-                android:padding="12dp"
-                android:background="#DCEDC8"
                 android:layout_marginBottom="16dp"
-                android:gravity="center" />
+                android:background="#DCEDC8"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@string/help_nav_bar"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
             <!-- Help Cards -->
             <!-- Home -->
@@ -64,19 +64,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Home Page"
+                    android:text="@string/help_home_title"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="The first screen you see. Tap items or use the bar to explore the app."
-                    android:textSize="14sp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
-                    android:textColor="#000000" />
+                    android:text="@string/help_home_text"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/goToHomeButton"
@@ -98,19 +98,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Menu Page"
+                    android:text="@string/help_menu_title"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See a list of all available food items. Tap any item for more info."
-                    android:textSize="14sp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
-                    android:textColor="#000000" />
+                    android:text="@string/help_menu_text"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/goToMenuButton"
@@ -132,17 +132,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Counter Page"
+                    android:text="@string/help_counter_title"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Track your servings with a simple counter that can add items using the menu."
+                    android:text="@string/help_counter_text"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -150,7 +150,8 @@
                     android:id="@+id/goToCounterButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/calorie_button" />
+                    android:text="@string/calorie_button"
+                    tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
 
@@ -166,17 +167,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="About Page"
+                    android:text="@string/help_about_title"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Learn more about the EatGreen and what we created."
+                    android:text="@string/help_about_text"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -200,19 +201,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact Page"
+                    android:text="@string/help_contact_title"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Get in touch with us or follow us on social media."
-                    android:textSize="14sp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="8dp"
-                    android:textColor="#000000" />
+                    android:text="@string/help_contact_text"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/goToContactButton"

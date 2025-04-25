@@ -26,7 +26,7 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/kitchen_image"
         android:scaleType="centerCrop"
-        android:src="@drawable/resturant"
+        android:src="@drawable/restaurant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,14 +36,14 @@
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Eat Green!"
+        android:layout_marginTop="16dp"
+        android:text="@string/home_welcome_text"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"
-        app:layout_constraintTop_toBottomOf="@id/about_image"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_image" />
 
     <LinearLayout
         android:id="@+id/categoryButtons"
@@ -63,47 +63,51 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Vegan"
-            android:textColor="#000000"
             android:backgroundTint="#8BC34A"
             android:padding="4dp"
-            android:textSize="12sp" />
+            android:text="@string/home_vegan_button"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/vegetarianButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:text="Vegetarian"
-            android:textColor="#000000"
             android:backgroundTint="#8BC34A"
             android:padding="4dp"
+            android:text="@string/home_vegetarian_button"
+            android:textColor="#000000"
             android:textSize="12sp"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp" />
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/dairyFreeButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Dairy Free"
-            android:textColor="#000000"
             android:backgroundTint="#8BC34A"
             android:padding="4dp"
-            android:textSize="12sp" />
+            android:text="@string/home_dairy_button"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
 
         <Button
             android:id="@+id/lowCalorieButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_weight="1"
-            android:text="Low Calorie"
-            android:textColor="#000000"
             android:backgroundTint="#8BC34A"
             android:padding="4dp"
+            android:text="@string/home_calorie_button"
+            android:textColor="#000000"
             android:textSize="12sp"
-            android:layout_marginStart="4dp" />
+            tools:ignore="ButtonStyle,VisualLintButtonSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -137,6 +141,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
+                    android:contentDescription="@string/placeholder"
                     android:scaleType="centerCrop"
                     android:src="@drawable/soup" />
 
@@ -145,9 +150,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Spiced Lentil Soup"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="@string/home_soup_button"
                     android:textColor="#000000"
-                    android:backgroundTint="#FFFFFF" />
+                    tools:ignore="VisualLintButtonSize" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -169,6 +175,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
+                    android:contentDescription="@string/placeholder"
                     android:scaleType="centerCrop"
                     android:src="@drawable/salmon" />
 
@@ -177,9 +184,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Salmon with Asparagus"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="@string/home_salmon_button"
                     android:textColor="#000000"
-                    android:backgroundTint="#FFFFFF" />
+                    tools:ignore="VisualLintButtonSize" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -190,97 +198,110 @@
         android:id="@+id/helpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Help"
-        android:textColor="#000000"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#8BC34A"
+        android:text="@string/home_help_button"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@id/bottom_bar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="12dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Social Media Bar -->
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#8BC34A"
-        android:padding="10dp"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:baselineAligned="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Twitter -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/twitter_social"
                 android:src="@drawable/twitter" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@twitter.com"
-                android:textColor="#000000" />
+                android:text="@string/twitter_social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Facebook -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/facebook_Social"
                 android:src="@drawable/facebook" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@facebook.com"
-                android:textColor="#000000" />
+                android:text="@string/facebook_Social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Instagram -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/instagram_social"
                 android:src="@drawable/instagram" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@instagram.com"
-                android:textColor="#000000" />
+                android:text="@string/instagram_social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- TikTok -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/tiktok_social"
                 android:src="@drawable/tiktok" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EatGreen@tiktok.com"
-                android:textColor="#000000" />
+                android:text="@string/tiktok_social"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 
