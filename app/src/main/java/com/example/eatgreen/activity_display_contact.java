@@ -13,7 +13,6 @@ import androidx.appcompat.widget.Toolbar;
 public class activity_display_contact extends AppCompatActivity {
 
     private EditText emailEditText, messageEditText;
-    private Button sendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class activity_display_contact extends AppCompatActivity {
         // Initialize the views
         emailEditText = findViewById(R.id.email_edit_text);
         messageEditText = findViewById(R.id.message_edit_text);
-        sendButton = findViewById(R.id.send_button);
+        Button sendButton = findViewById(R.id.send_button);
 
         // Set the send button's onClick listener
         sendButton.setOnClickListener(v -> sendMessage());
