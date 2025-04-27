@@ -19,14 +19,13 @@ public class activity_display_help extends AppCompatActivity {
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
-        // Button setup
         Button homeButton = findViewById(R.id.goToHomeButton);
         Button menuButton = findViewById(R.id.goToMenuButton);
         Button counterButton = findViewById(R.id.goToCounterButton);
         Button aboutButton = findViewById(R.id.goToAboutButton);
         Button contactButton = findViewById(R.id.goToContactButton);
 
-        // Set click listeners
+
         homeButton.setOnClickListener(v -> {
             Intent intent = new Intent(activity_display_help.this, MainActivity.class);
             startActivity(intent);
@@ -62,6 +61,7 @@ public class activity_display_help extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {

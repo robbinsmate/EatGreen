@@ -17,16 +17,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
-        setSupportActionBar(myToolBar); // This makes the toolbar your action bar
+        setSupportActionBar(myToolBar);
 
-        // Get buttons from XML
         Button veganButton = findViewById(R.id.veganButton);
         Button vegetarianButton = findViewById(R.id.vegetarianButton);
         Button dairyFreeButton = findViewById(R.id.dairyFreeButton);
         Button lowCalorieButton = findViewById(R.id.lowCalorieButton);
         Button helpButton = findViewById(R.id.helpButton);
 
-        // Set up button click listeners
         veganButton.setOnClickListener(v -> {
             Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
             startActivity(menuIntent);
@@ -61,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle menu item selection
+
+        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {

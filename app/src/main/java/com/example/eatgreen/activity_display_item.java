@@ -16,13 +16,13 @@ public class activity_display_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dish_item); // Ensure the layout is correct
+        setContentView(R.layout.activity_dish_item);
 
         // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
-        // Get the data from the intent
+        // Get the data
         String dishName = getIntent().getStringExtra("dish_name");
         String dishIngredients = getIntent().getStringExtra("dish_ingredients");
         String dishPrice = getIntent().getStringExtra("dish_price");
@@ -31,7 +31,7 @@ public class activity_display_item extends AppCompatActivity {
         String dishDescription = getIntent().getStringExtra("dish_description");
         int dishImageResId = getIntent().getIntExtra("dish_image", -1);
 
-        // Set the data to the UI elements
+        // Display the data
         TextView nameTextView = findViewById(R.id.dish_name);
         TextView ingredientsTextView = findViewById(R.id.dish_ingredients);
         TextView priceTextView = findViewById(R.id.dish_price);
@@ -52,12 +52,11 @@ public class activity_display_item extends AppCompatActivity {
         }
     }
 
-    // This method handles the clicks on the toolbar menu items
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
 
-        // Handle different menu item clicks
+        // Handle toolbar item selection
         if (itemId == R.id.home_page) {
             Intent homeIntent = new Intent(this, MainActivity.class);
             startActivity(homeIntent);
@@ -84,10 +83,9 @@ public class activity_display_item extends AppCompatActivity {
             return true;
         }
 
-        return super.onOptionsItemSelected(item); // Return true if handled, false if not
+        return super.onOptionsItemSelected(item);
     }
 
-    // Inflate the toolbar menu (if necessary)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_items, menu);

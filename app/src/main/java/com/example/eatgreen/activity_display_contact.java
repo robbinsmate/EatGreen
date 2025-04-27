@@ -23,7 +23,6 @@ public class activity_display_contact extends AppCompatActivity {
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar); // This makes the toolbar your action bar
 
-        // Initialize the views
         emailEditText = findViewById(R.id.email_edit_text);
         messageEditText = findViewById(R.id.message_edit_text);
         Button sendButton = findViewById(R.id.send_button);
@@ -41,7 +40,7 @@ public class activity_display_contact extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // Handle menu item selection
+        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
@@ -49,7 +48,6 @@ public class activity_display_contact extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.about_page) {
-            // Navigate to AboutActivity
             Intent aboutIntent = new Intent(activity_display_contact.this, activity_display_about.class);
             startActivity(aboutIntent);
             return true;
@@ -66,7 +64,6 @@ public class activity_display_contact extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
-            // Navigate to AboutActivity
             Intent contactIntent = new Intent(activity_display_contact.this, activity_display_contact.class);
             startActivity(contactIntent);
             return true;
@@ -75,19 +72,16 @@ public class activity_display_contact extends AppCompatActivity {
         }
     }
 
-    // Method to handle sending the message
+    // Method for sending the message
     private void sendMessage() {
         String email = emailEditText.getText().toString();
         String message = messageEditText.getText().toString();
 
         if (email.isEmpty() || message.isEmpty()) {
-            // Show a toast if the email or message is empty
             Toast.makeText(this, "Please fill in both fields", Toast.LENGTH_SHORT).show();
         } else {
-            // Show a toast to confirm the message is sent
             Toast.makeText(this, "Message sent successfully!", Toast.LENGTH_SHORT).show();
 
-            // Clear the email and message fields after submission
             emailEditText.setText("");
             messageEditText.setText("");
         }

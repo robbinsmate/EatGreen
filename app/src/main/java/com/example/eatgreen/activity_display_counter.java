@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -30,10 +29,9 @@ public class activity_display_counter extends AppCompatActivity {
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
-        counterLayout = findViewById(R.id.counterDisplayLayout); // Make sure to define this LinearLayout in your XML
+        counterLayout = findViewById(R.id.counterDisplayLayout);
         totalCaloriesDisplay = findViewById(R.id.totalCalories);
 
-        // Display the current items in the counter
         displayCounterItems();
 
         // Button to clear items
@@ -55,14 +53,10 @@ public class activity_display_counter extends AppCompatActivity {
     private void displayCounterItems() {
         int totalCalories = 0;
 
-        // Clear previous counter layout items
         counterLayout.removeAllViews();
-
-        // Inflate the dish cards for each dish in the counter
         LayoutInflater inflater = LayoutInflater.from(this);
 
         for (DishList dish : DishCounter.getInstance().getDishes()) {
-            // Inflate the dish card layout
             View dishCard = inflater.inflate(R.layout.menu_dish_card, counterLayout, false);
 
             // Set the dish data into the card
@@ -72,7 +66,7 @@ public class activity_display_counter extends AppCompatActivity {
             TextView dishAllergens = dishCard.findViewById(R.id.dish_allergens);
             TextView dishCalories = dishCard.findViewById(R.id.dish_calories);
             ImageView dishImage = dishCard.findViewById(R.id.dish_image);
-            Button addToCounterButton = dishCard.findViewById(R.id.addToCounterButton); // Button inside the card
+            Button addToCounterButton = dishCard.findViewById(R.id.addToCounterButton);
 
             // Populate the dish data
             dishName.setText(dish.getName());
@@ -82,17 +76,14 @@ public class activity_display_counter extends AppCompatActivity {
             dishCalories.setText("Calories: " + dish.getCalories());
             dishImage.setImageResource(dish.getImageResId());
 
-            // Set the click listener for "Add to Counter" button
-            addToCounterButton.setVisibility(View.GONE); // No need for this in the counter view
+            // Set "Add to Counter" button to invisible
+            addToCounterButton.setVisibility(View.GONE);
 
-            // Add the dish card to the layout
             counterLayout.addView(dishCard);
 
-            // Add to total calories
             totalCalories += Integer.parseInt(dish.getCalories());
         }
 
-        // Update the total calories display
         totalCaloriesDisplay.setText("Total Calories: " + totalCalories);
     }
 
@@ -104,6 +95,8 @@ public class activity_display_counter extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {

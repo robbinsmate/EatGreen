@@ -32,15 +32,15 @@ public class activity_display_menu extends AppCompatActivity {
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
-        // Populate the dishListArray with sample data
+        // Populate the array
         populateDishList();
 
-        // Initialize the menu sections
+        // Initialize the menu
         LinearLayout startersLayout = findViewById(R.id.starters);
         LinearLayout mainsLayout = findViewById(R.id.mains);
         LinearLayout dessertsLayout = findViewById(R.id.desserts);
 
-        // Add dishes to the sections
+        // Add dishes
         addDishesToSection(startersLayout, 0, 3, "Starters");
         addDishesToSection(mainsLayout, 3, 6, "Mains");
         addDishesToSection(dessertsLayout, 6, 9, "Desserts");
@@ -48,13 +48,14 @@ public class activity_display_menu extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu items
         getMenuInflater().inflate(R.menu.menu_items, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
@@ -86,7 +87,6 @@ public class activity_display_menu extends AppCompatActivity {
     }
 
     private void populateDishList() {
-        // Sample dishes (Added description and image placeholder)
         dishListArray.add(new DishList("Spiced Lentil Soup", "Lentils, Spices, Vegetable Broth", "£5.99", "V, Ve, D", "200", "A warm, spiced dish perfect for winter days.", R.drawable.soup));
         dishListArray.add(new DishList("Crispy Sweet Potato Fries", "Sweet Potatoes, Olive Oil, Spices", "£4.99", "V, Ve, G", "220", "Crispy fries, perfectly seasoned.", R.drawable.fries));
         dishListArray.add(new DishList("Stuffed Mushrooms", "Mushrooms, Quinoa, Garlic, Herbs", "£6.49", "Ve, D, G", "240", "Stuffed mushrooms with quinoa and herbs.", R.drawable.mushroom));
@@ -104,28 +104,26 @@ public class activity_display_menu extends AppCompatActivity {
     private void addDishesToSection(LinearLayout sectionLayout, int startIndex, int endIndex, String title) {
         LayoutInflater inflater = LayoutInflater.from(this);
 
-        // Add the section title to the layout
         TextView sectionTitle = new TextView(this);
         sectionTitle.setText(title);
         sectionTitle.setTextSize(20);
         sectionTitle.setTextColor(ContextCompat.getColor(this, android.R.color.black));
         sectionLayout.addView(sectionTitle);
 
-        // Add dishes to the section
+        // Add dishes
         for (int i = startIndex; i < endIndex; i++) {
             DishList dish = dishListArray.get(i);
 
-            // Inflate the dish card layout
             View dishCard = inflater.inflate(R.layout.menu_dish_card, sectionLayout, false);
 
-            // Set the dish data into the card
+            // Display the data
             TextView dishName = dishCard.findViewById(R.id.dish_name);
             TextView dishIngredients = dishCard.findViewById(R.id.dish_ingredients);
             TextView dishPrice = dishCard.findViewById(R.id.dish_price);
             TextView dishAllergens = dishCard.findViewById(R.id.dish_allergens);
             TextView dishCalories = dishCard.findViewById(R.id.dish_calories);
             ImageView dishImage = dishCard.findViewById(R.id.dish_image);
-            Button addToCounterButton = dishCard.findViewById(R.id.addToCounterButton);  // Button inside the card
+            Button addToCounterButton = dishCard.findViewById(R.id.addToCounterButton);
 
             dishName.setText(dish.getName());
             dishIngredients.setText("Ingredients: " + dish.getIngredients());
@@ -134,12 +132,11 @@ public class activity_display_menu extends AppCompatActivity {
             dishCalories.setText("Calories: " + dish.getCalories());
             dishImage.setImageResource(dish.getImageResId());
 
-            // Make the dish name clickable and navigate to the dish item page
+            // Dish name clickable
             dishName.setOnClickListener(v -> {
-                // Create an intent to go to the dish item page
                 Intent intent = new Intent(activity_display_menu.this, activity_display_item.class);
 
-                // Pass the dish data to the new activity
+                // Pass the data
                 intent.putExtra("dish_name", dish.getName());
                 intent.putExtra("dish_ingredients", dish.getIngredients());
                 intent.putExtra("dish_price", dish.getPrice());
@@ -148,18 +145,15 @@ public class activity_display_menu extends AppCompatActivity {
                 intent.putExtra("dish_description", dish.getDescription());
                 intent.putExtra("dish_image", dish.getImageResId());
 
-                // Start the dish item activity
                 startActivity(intent);
             });
 
-            // Add the "Add to Counter" button inside the dish card
             addToCounterButton.setOnClickListener(v -> {
-                // Add the entire dish to the counter (full details, not just name)
                 DishCounter.getInstance().addDish(dish);
                 Toast.makeText(activity_display_menu.this, "Added to counter!", Toast.LENGTH_SHORT).show();
             });
 
-            sectionLayout.addView(dishCard);  // Add the card to the section
+            sectionLayout.addView(dishCard);
         }
     }
 }

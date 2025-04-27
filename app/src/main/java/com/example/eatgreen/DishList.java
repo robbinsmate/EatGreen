@@ -6,10 +6,9 @@ public class DishList {
     private final String price;
     private final String allergens;
     private final String calories;
-    private final String description;  // Added description
-    private final int imageResId;      // Added image resource ID
+    private final String description;
+    private final int imageResId;
 
-    // Updated constructor
     public DishList(String name, String ingredients, String price, String allergens, String calories, String description, int imageResId) {
         this.name = name;
         this.ingredients = ingredients;
@@ -20,7 +19,6 @@ public class DishList {
         this.imageResId = imageResId;
     }
 
-    // Getter methods
     public String getName() {
         return name;
     }

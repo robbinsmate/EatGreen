@@ -28,7 +28,7 @@ public class activity_display_about extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // Handle menu item selection
+        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
@@ -36,7 +36,6 @@ public class activity_display_about extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.about_page) {
-            // Navigate to AboutActivity
             Intent aboutIntent = new Intent(activity_display_about.this, activity_display_about.class);
             startActivity(aboutIntent);
             return true;
@@ -53,7 +52,6 @@ public class activity_display_about extends AppCompatActivity {
             startActivity(aboutIntent);
             return true;
         } else if (itemId == R.id.contact_page) {
-            // Navigate to AboutActivity
             Intent contactIntent = new Intent(activity_display_about.this, activity_display_contact.class);
             startActivity(contactIntent);
             return true;

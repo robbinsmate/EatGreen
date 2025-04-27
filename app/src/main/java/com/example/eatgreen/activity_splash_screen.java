@@ -12,12 +12,12 @@ public class activity_splash_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        // Delay to show splash screen for a few seconds (e.g., 3 seconds)
+        // Delay the splashscreen
         new Handler().postDelayed(() -> {
-            // Start MainActivity after the splash screen
+            // Start Home screen
             Intent intent = new Intent(activity_splash_screen.this, MainActivity.class);
             startActivity(intent);
-            finish();  // Close the splash screen activity so user can't go back to it
-        }, 3000);  // 3000ms = 3 seconds
+            finish();
+        }, 3000);
     }
 }
