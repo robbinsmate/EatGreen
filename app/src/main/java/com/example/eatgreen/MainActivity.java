@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set up the Toolbar
         Toolbar myToolBar = findViewById(R.id.toolbar2);
         setSupportActionBar(myToolBar);
 
@@ -24,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Button dairyFreeButton = findViewById(R.id.dairyFreeButton);
         Button lowCalorieButton = findViewById(R.id.lowCalorieButton);
         Button helpButton = findViewById(R.id.helpButton);
+        Button lentilSoupButton = findViewById(R.id.lentilSoupButton);
+        Button salmonButton = findViewById(R.id.salmonButton);
 
         veganButton.setOnClickListener(v -> {
             Intent menuIntent = new Intent(MainActivity.this, activity_display_menu.class);
@@ -49,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
             Intent helpIntent = new Intent(MainActivity.this, activity_display_help.class);
             startActivity(helpIntent);
         });
+
+        lentilSoupButton.setOnClickListener(v -> {
+            Intent soupIntent = new Intent(MainActivity.this, activity_display_item.class);
+            startActivity(soupIntent);
+        });
+
+        salmonButton.setOnClickListener(v -> {
+            Intent salmonIntent = new Intent(MainActivity.this, activity_display_item.class);
+            startActivity(salmonIntent);
+        });
     }
 
     @Override
@@ -60,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // Handle toolbar item selection
         int itemId = item.getItemId();
 
         if (itemId == R.id.home_page) {
