@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         lentilSoupButton.setOnClickListener(v -> {
-            Intent soupIntent = new Intent(MainActivity.this, activity_display_item.class);
+            Intent soupIntent = new Intent(MainActivity.this, activity_display_menu.class);
             startActivity(soupIntent);
         });
 
         salmonButton.setOnClickListener(v -> {
-            Intent salmonIntent = new Intent(MainActivity.this, activity_display_item.class);
+            Intent salmonIntent = new Intent(MainActivity.this, activity_display_menu.class);
             startActivity(salmonIntent);
         });
     }
